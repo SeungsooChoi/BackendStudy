@@ -1,9 +1,7 @@
 package com.example.demo.board.dto;
 
-import com.querydsl.core.annotations.QueryProjection;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -16,27 +14,18 @@ public class BoardDto {
     private String boardNickname;
     private List<CommentDto> comments;
 
-    public void setBoardId(int boardId) {
-        this.boardId = boardId;
+    public void setBoardDto(int id, String title, String content, String author){
+        this.boardId = id;
+        this.boardTitle = title;
+        this.boardContent = content;
+        this.boardNickname = author;
     }
 
-    public void setBoardTitle(String boardTitle) {
-        this.boardTitle = boardTitle;
-    }
-
-    public void setBoardContent(String boardContent) {
-        this.boardContent = boardContent;
-    }
-
-    public void setBoardNickname(String boardNickname) {
-        this.boardNickname = boardNickname;
-    }
-
-    public List<CommentDto> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentDto> comments) {
+    public void setBoardDto(int id, String title, String content, String author, List<CommentDto> comments){
+        this.boardId = id;
+        this.boardTitle = title;
+        this.boardContent = content;
+        this.boardNickname = author;
         this.comments = comments;
     }
 }

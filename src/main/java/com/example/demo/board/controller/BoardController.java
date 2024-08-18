@@ -23,24 +23,9 @@ public class BoardController {
     private final BoardService boardService;
     private final BoardConvertService boardConvertService;
 
-//    @GetMapping
-//    public List<BoardDto> getAllBoard(){
-//        return boardConvertService.convertAllToDto();
-//    }
-
     @GetMapping
-    public Page<SearchBoardDto> searchBoards(
-            @RequestParam String title,
-            @RequestParam String content,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
-            @RequestParam(required = false) String nickname,
-            Pageable pageable) {
-
-        LocalDateTime startDateTime = startDate.atStartOfDay();
-        LocalDateTime endDateTime = endDate.atTime(LocalTime.MAX);
-
-        return boardService.search(title, content, startDateTime, endDateTime, nickname, pageable);
+    public Page<BoardDto> getAllBoards(@ModelAttribute SearchBoardDto searchBoardDto, Pageable pageable) {
+        return boardService.getAllBoards(searchBoardDto, pageable);
     }
 
     @GetMapping("/{boardId}")

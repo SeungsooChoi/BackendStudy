@@ -39,29 +39,13 @@ public class Board {
     @LastModifiedDate
     private LocalDateTime modDate;
 
-
-    public void setBoardId(int boardId) {
-        this.boardId = boardId;
+    public void setBoardContent(String title, String content){
+        this.boardTitle = title;
+        this.boardContent = content;
     }
-
-
-    public void setBoardTitle(String boardTitle) {
-        this.boardTitle = boardTitle;
+    public void setBoardContent(String title, String content, String author){
+        this.boardTitle = title;
+        this.boardContent = content;
+        this.boardNickname = author;
     }
-
-
-    public void setBoardContent(String boardContent) {
-        this.boardContent = boardContent;
-    }
-
-
-    public void setBoardNickname(String boardNickname) {
-        this.boardNickname = boardNickname;
-    }
-
-
-    public void setCommentList(List<Comment> commentList) {
-        this.commentList = commentList;
-    }
-
 }
