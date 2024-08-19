@@ -83,7 +83,7 @@ public class BoardRepositoryImpl implements CustomBoardRepository {
 
     private BoardDto toDTO(Board board) {
         BoardDto dto = new BoardDto();
-        dto.setBoardDto(board.getBoardId(), board.getBoardTitle(), board.getBoardContent(), board.getBoardNickname());
+        dto.setBoardDto(board.getBoardId(), board.getBoardTitle(), board.getBoardContent(), board.getBoardNickname(), board.getRegDate());
         return dto;
     }
 }
